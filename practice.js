@@ -1,7 +1,8 @@
 //We're in a job interview. Answer the following questions (try to not look at your notes unless you have to).
   // 1) What is the purpose of the 'this keyword'?
 
-      // 'this' is used to refer to the object in which it is contained
+      // 'this' is used to refer to the object in which it is contained, the object may or may not have been 
+      // defined yet
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
@@ -18,7 +19,8 @@
 
   // 4) What does .bind do?
 
-      // 'bind' explicitly sets the 'this' value to a specific object.
+      // 'bind' explicitly sets the 'this' value to a specific object. 
+      //bind returns a new function, call and apply just invoke a functions
 
 
 //Next Problem
@@ -44,18 +46,18 @@ user.getUsername();
 
 
 // Write the function definitions which will make the following function invocations function properly.
-function Car(make, model, year, move) {
+function Car(make, model, year) {
   this.make = make;
   this.model = model;
   this.year = year;
-  this.move = move;
+  this.move = 10;
   this.moveCar = function() {
     return this.move += 10;
   }
 }
 
-var prius = new Car('Toyota', 'Prius', 2011, 0);
-var mustang = new Car('Ford', 'Mustang', 2013, 0);
+var prius = new Car('Toyota', 'Prius', 2011);
+var mustang = new Car('Ford', 'Mustang', 2013);
 
 prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
 mustang.moveCar(); //increments mustang' move property by 10. Returns the new move property.
